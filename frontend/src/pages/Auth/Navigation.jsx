@@ -12,11 +12,12 @@ import { useNavigate } from "react-router-dom";
 import "./Navigation.css";
 import { useLogoutMutation } from "../../redux/api/usersApiSlice.js";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../../redux/features/auth/authSlice";
+import { logout } from "../../redux/features/auth/authSlice.js";
 import FavoritesCount from "../Products/FavoritesCount.jsx";
 
 const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
+  const { cartItems } = useSelector((state) => state.cart);
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
@@ -77,16 +78,16 @@ const Navigation = () => {
             <AiOutlineShoppingCart className="mt-[3rem] mr-2" size={26} />
             <span className="hidden nav-item-name mt-[3rem]">Cart</span>{" "}
           </div>
-          {/* 
-          <div className="absolute top-9">
+
+          <div className="absolute top-9 left-4">
             {cartItems.length > 0 && (
               <span>
-                <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+                <span className="px-1 py-0 mr-2 text-sm text-white bg-pink-500 rounded-full">
                   {cartItems.reduce((a, c) => a + c.qty, 0)}
                 </span>
               </span>
             )}
-          </div> */}
+          </div>
         </Link>
 
         <Link to="/favorite" className="flex relative">
