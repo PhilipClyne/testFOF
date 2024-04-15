@@ -4,6 +4,7 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Header from "../components/Header";
 import Product from "./Products/Product";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const { keyword } = useParams();
@@ -44,6 +45,7 @@ const Home = () => {
           </div>
         </>
       )}
+      <Footer />
     </>
   );
 };
