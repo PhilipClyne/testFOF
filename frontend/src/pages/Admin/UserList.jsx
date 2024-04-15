@@ -9,7 +9,7 @@ import {
 } from "../../redux/api/usersApiSlice.js";
 import { toast } from "react-toastify";
 // ⚠️⚠️⚠️ don't forget this ⚠️⚠️⚠️⚠️
-// import AdminMenu from "./AdminMenu";
+import AdminMenu from "./AdminMenu";
 
 const UserList = () => {
   const { data: users, refetch, isLoading, error } = useGetUsersQuery();
@@ -71,7 +71,7 @@ const UserList = () => {
         </Message>
       ) : (
         <div className="flex flex-col md:flex-row bg-slate-200 rounded-lg ">
-          {/* <AdminMenu /> */}
+          <AdminMenu />
           <table className="w-full md:w-4/5 mx-auto">
             <thead>
               <tr>

@@ -7,7 +7,6 @@ import AdminMenu from "./pages/Admin/AdminMenu";
 function App() {
   return (
     <>
-      <AdminMenu />
       <ToastContainer />
       <Navigation />
       <main className="py-3">

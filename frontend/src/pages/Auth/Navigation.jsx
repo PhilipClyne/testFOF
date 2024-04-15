@@ -13,6 +13,7 @@ import "./Navigation.css";
 import { useLogoutMutation } from "../../redux/api/usersApiSlice.js";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/features/auth/authSlice";
+import FavoritesCount from "../Products/FavoritesCount.jsx";
 
 const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -51,7 +52,7 @@ const Navigation = () => {
       style={{ zIndex: 9999 }}
       className={`${
         showSidebar ? "hidden" : "flex"
-      } rounded-tr-xl rounded-br-xl xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#000] w-[4%] hover:w-[10%] h-[100vh]  fixed `}
+      } rounded-tr-xl rounded-br-xl xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#000] w-[4%] hover:w-[10%] h-[100vh] fixed `}
       id="navigation-container"
     >
       <div className="flex flex-col justify-center space-y-4">
@@ -92,7 +93,7 @@ const Navigation = () => {
           <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
             <FaHeart className="mt-[3rem] mr-2" size={20} />
             <span className="hidden nav-item-name mt-[3rem]">Favorites</span>
-            {/* <FavoritesCount /> */}
+            <FavoritesCount />
           </div>
         </Link>
       </div>

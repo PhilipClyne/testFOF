@@ -103,14 +103,14 @@ const Login = () => {
             </p>
           </div>
         </div>
-        <div class="relative h-[55rem] w-[55%] xl:block md:hidden sm:hidden rounded-lg overflow-hidden">
+        <div className="relative h-[55rem] w-[55%] xl:block md:hidden sm:hidden rounded-lg overflow-hidden">
           <img
             // src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
             src="../../../src//img/Default_An_ultra_detailed_realistic_digital_art_featuring_Braz_2.jpg"
             alt=""
             class="h-full w-full object-cover rounded-lg"
           />
-          <div class="absolute inset-0 bg-gradient-to-l from-transparent to-white opacity-50"></div>
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-white opacity-50"></div>
         </div>
       </section>
     </div>
