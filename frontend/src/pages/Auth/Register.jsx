@@ -146,7 +146,7 @@ const Register = () => {
       </div>
       <div class="relative h-[55rem] w-[55%] xl:block md:hidden sm:hidden rounded-lg overflow-hidden">
         <img
-          src="../../../src/img/Default_An_ultra_detailed_realistic_digital_art_featuring_rio_3.jpg"
+          src="../../../src/img/Background//Default_An_ultra_detailed_realistic_digital_art_featuring_rio_3.jpg"
           alt=""
           class="h-full w-full object-cover rounded-lg"
         />
