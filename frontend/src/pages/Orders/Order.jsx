@@ -1,18 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import Messsage from "../../components/Message";
 import Loader from "../../components/Loader";
+import QRcode from "../../pages/Orders/QRcode";
 import {
   useDeliverOrderMutation,
   useGetOrderDetailsQuery,
   useGetPaypalClientIdQuery,
   usePayOrderMutation,
 } from "../../redux/api/orderApiSlice";
+import QRCode from "qrcode.react";
+import qrCodeUrl from "../../img/QR.jpg";
 
 const Order = () => {
+  const [showQRCode, setShowQRCode] = useState(false);
+
+  const toggleQRCode = () => {
+    setShowQRCode(!showQRCode);
+  };
   const { id: orderId } = useParams();
 
   const {
@@ -190,6 +198,20 @@ const Order = () => {
           <span>Total</span>
           <span>$ {order.totalPrice}</span>
         </div>
+        <button
+          type="button"
+          className="bg-blue-500 text-white w-full py-2 mt-4"
+          onClick={toggleQRCode}
+        >
+          {showQRCode ? "Hide QR Code" : "Show QR Code"}
+        </button>
+        {showQRCode && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white p-4 rounded">
+              <img src={qrCodeUrl} alt="Order QR Code" />
+            </div>
+          </div>
+        )}
 
         {!order.isPaid && (
           <div>

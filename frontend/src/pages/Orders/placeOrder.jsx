@@ -10,9 +10,6 @@ import { clearCartItems } from "../../redux/features/cart/cartSlice";
 
 const PlaceOrder = () => {
   const navigate = useNavigate();
-  const fullImageLoader = () => {
-    navigate("/qrcode");
-  };
 
   const cart = useSelector((state) => state.cart);
 
@@ -39,50 +36,6 @@ const PlaceOrder = () => {
       }).unwrap();
       dispatch(clearCartItems());
       navigate(`/order/${res._id}`);
-
-      // Thực hiện các xử lý đặt hàng ở đây
-
-      // Nếu đặt hàng thành công, hiển thị thông báo thành công
-      toast.success(
-        <div>
-          <img
-            src="../../../src/img/434921500_306453009143644_6119861250961947939_n.jpg"
-            alt="Success"
-            onClick={fullImageLoader}
-          />
-          Chuyển khoản để xác nhận thanh toán
-        </div>
-      );
-    } catch (error) {
-      toast.error(error);
-    }
-  };
-  const momoOrderHandler = async () => {
-    try {
-      const res = await createOrder({
-        orderItems: cart.cartItems,
-        shippingAddress: cart.shippingAddress,
-        paymentMethod: cart.paymentMethod,
-        itemsPrice: cart.itemsPrice,
-        shippingPrice: cart.shippingPrice,
-        taxPrice: cart.taxPrice,
-        totalPrice: cart.totalPrice,
-      }).unwrap();
-      //   dispatch(clearCartItems());
-
-      // Thực hiện các xử lý đặt hàng ở đây
-
-      // Nếu đặt hàng thành công, hiển thị thông báo thành công
-      toast.success(
-        <div>
-          <img
-            src="../../../src/img/434921500_306453009143644_6119861250961947939_n.jpg"
-            alt="Success"
-            onClick={fullImageLoader}
-          />
-          Chuyển khoản để xác nhận thanh toán
-        </div>
-      );
     } catch (error) {
       toast.error(error);
     }
@@ -97,7 +50,7 @@ const PlaceOrder = () => {
           <Message>Your cart is empty</Message>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse border-2 p-4 border-black rounded-xl">
+            <table className="w-full border-collapse">
               <thead>
                 <tr>
                   <td className="px-1 py-2 text-left align-top">Image</td>
@@ -136,7 +89,7 @@ const PlaceOrder = () => {
 
         <div className="mt-8">
           <h2 className="text-2xl font-semibold mb-5">Order Summary</h2>
-          <div className="flex justify-between flex-wrap p-8 bg-white border-2 rounded-xl border-black">
+          <div className="flex justify-between flex-wrap p-8 bg-[#ffffff]">
             <ul className="text-lg">
               <li>
                 <span className="font-semibold mb-4">Items:</span> $
@@ -167,16 +120,10 @@ const PlaceOrder = () => {
               </p>
             </div>
 
-            {/* <div className="flex">
-              <h2 className="text-2xl font-semibold mb-4 flex ">QR code</h2>
-              <img
-                src="../../../src/img/434921500_306453009143644_6119861250961947939_n.jpg"
-                alt=""
-                srcset=""
-                onClick={fullImageLoader}
-                style={{ width: "10%", height: "auto" }}
-              />
-            </div> */}
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">Payment Method</h2>
+              <strong>Method:</strong> {cart.paymentMethod}
+            </div>
           </div>
 
           <button
@@ -185,15 +132,7 @@ const PlaceOrder = () => {
             disabled={cart.cartItems === 0}
             onClick={placeOrderHandler}
           >
-            Countinue to Check Out
-          </button>
-          <button
-            type="button"
-            className="bg-pink-500 text-white py-2 px-4 rounded-full text-lg w-full mt-4"
-            disabled={cart.cartItems === 0}
-            onClick={momoOrderHandler}
-          >
-            Check Out by Momo
+            Place Order
           </button>
 
           {isLoading && <Loader />}
