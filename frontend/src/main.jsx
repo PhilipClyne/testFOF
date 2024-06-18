@@ -36,6 +36,7 @@ import QRcode from "./pages/Orders/QRcode.jsx";
 import OrderList from "./pages/Admin/OrderList.jsx";
 import UserOrder from "./pages/User/UserOrder.jsx";
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
+import Menu from "./pages/Menu/Menu.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,6 +46,7 @@ const router = createBrowserRouter(
       <Route index={true} path="/" element={<Home />} />
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/shop" element={<Shop />} />
+      <Route path="/menu" element={<Menu />} />
 
       <Route path="" element={<PrivateRoute />}>
         <Route path="/profile" element={<Profile />} />

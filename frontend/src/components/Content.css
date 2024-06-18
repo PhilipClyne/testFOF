@@ -1,0 +1,150 @@
+/* Bootstrap */
+@import url("public/css/A.bootstrap.css");
+
+/* Animation */
+@import url("public/css/animate.css");
+
+/* Custom Styles */
+@import url("public/css/style.css");
+@import url("public/css/responsive-style.css");
+@import url("public/fonts/styles.css");
+@import url("public/css/tstyles.css");
+
+/* Mobile Specific Styles */
+@import url("public/css/tmobile.css");
+@import url("public/css/responsive-style.css");
+
+/* Owl Carousel */
+@import url("public/css/owl.carousel.css");
+
+/* Specific CSS Rules (extracted from inline styles) */
+.text-content-first h2 {
+  color: #fff;
+}
+
+/* Classes extracted from HTML */
+.img-pc {
+  width: 100%;
+}
+
+.img-mobile {
+  width: 100%;
+}
+
+.clear-padd-left {
+  padding-left: 0 !important;
+}
+
+.clear-padd-right {
+  padding-right: 0 !important;
+}
+
+.clear-padd {
+  padding: 0 !important;
+}
+
+.tmobile-padd-top {
+  padding-top: 15px !important;
+}
+
+.mobile-padd-right {
+  padding-right: 15px !important;
+}
+
+.tnone-padding-home {
+  padding: 0 !important;
+}
+
+.mobile-padd-left {
+  padding-left: 15px !important;
+}
+
+.clear-padd.last-list-index {
+  padding: 0 !important;
+}
+
+.timg-home-banner-last {
+  margin-top: 15px;
+}
+
+.descrip-index {
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tdescrip-index-2 {
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.descrip-index-2 {
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Additional styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-md-6,
+.col-sm-12,
+.col-md-12 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-md-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.col-sm-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.img-content-first {
+  position: relative;
+}
+
+.text-content-first {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.download {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #f00;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.mc-cafe {
+  text-align: center;
+  padding: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+}

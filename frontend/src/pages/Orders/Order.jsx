@@ -200,7 +200,7 @@ const Order = () => {
         </div>
         <button
           type="button"
-          className="bg-blue-500 text-white w-full py-2 mt-4"
+          className="bg-blue-500 text-white w-full py-2 mb-4"
           onClick={toggleQRCode}
         >
           {showQRCode ? "Hide QR Code" : "Show QR Code"}
@@ -208,7 +208,14 @@ const Order = () => {
         {showQRCode && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div className="bg-white p-4 rounded">
-              <img src={qrCodeUrl} alt="Order QR Code" />
+              <img src={qrCodeUrl} alt="Order QR Code" className="w-[40rem]" />
+              <button
+                type="button"
+                className="bg-blue-500 text-white w-full py-2 mb-4"
+                onClick={toggleQRCode}
+              >
+                Close
+              </button>
             </div>
           </div>
         )}
